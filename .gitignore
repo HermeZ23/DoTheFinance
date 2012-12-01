@@ -6,6 +6,9 @@
 *.swp
 *.out
 
+#except sass
+*.scss
+
 
 #except this file
 !.gitignore
