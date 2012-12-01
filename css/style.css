@@ -1,4 +1,31 @@
+body {
+  background-color: #f5f5f5; }
+
 #head {
-  width: 80%;
+  width: 1000px;
+  height: 120px;
+  margin: 10px auto 0 auto;
+  color: orange;
+  text-align: center;
+  background-color: purple; }
+  #head h1 {
+    position: relative;
+    margin-top: 0px; }
+
+#body {
+  width: 1000px;
+  height: 600px;
+  margin: 10px auto 0 auto;
+  background-color: #d3d3d3; }
+
+#footer {
+  width: 1000px;
   height: 60px;
-  background-color: #ACD; }
+  margin: 10px auto 0 auto;
+  background-color: #800080; }
+
+#time {
+  width: 120px;
+  height: 60px;
+  margin: 0 10px 0 0;
+  background-color: orange; }
