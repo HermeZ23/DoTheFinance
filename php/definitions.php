@@ -6,6 +6,8 @@ define("DBUSER", "financeDB"); //DB user
 define("DBPASS", "Password11"); //DB password
 define("DBPATH", "127.0.0.1"); //DB path
 
+define("DBPREFIX", "fin_"); //DB prefix
+
 
 
  ?>

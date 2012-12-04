@@ -2,10 +2,11 @@
 
 require_once("definitions.php");
 
-echo DBPATH;
-$connection = mysql_connect (DBPATH,DBUSER, DBPASS)
-or die ("No connection possible!". mysql_error() );
+  $db = mysql_connect (DBPATH,DBUSER, DBPASS);
+  mysql_select_db(DB, $db);
 
-mysql_select_db(DB) or die ("No database found.");
+  $query = mysql_query("select count(id) from ".DBPREFIX."user where name='admin' and email='admin'");
+  $result = mysql_fetch_row($query);
+	print_r($result);
 
 ?>
