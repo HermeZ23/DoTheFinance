@@ -11,8 +11,15 @@ if((isset($_POST['username'], $_POST['password']))) {
   $query = mysql_query("select count(id) from ".DBPREFIX."user where name='".$username."' and email='".$password."'");
   $result = mysql_fetch_row($query);
   if($result[0] == 1) {
-    session_start();
+		$query = mysql_query("select * from ".DBPREFIX."user where name='".$username."'");
+  	$result = mysql_fetch_row($query);
+	  if(ord($result[5]) == 0 )  
+			die("<error id='1' />");		
+		session_start();
     $_SESSION['username'] = $username;
+		$_SESSION['email'] = $result[2];
+		$_SESSION['admin'] = ord($result[3]);
+		$_SESSION['accountant'] = ord($result[4]);
     die("<success />");
   }else 
 		die("<error id='2' />");
