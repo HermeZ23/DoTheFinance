@@ -1,5 +1,5 @@
 
-
+var session = new Array();
 	
 $(document).ready(function() {
 
@@ -15,12 +15,18 @@ $(document).ready(function() {
       $('#message').addClass(code);
       if(code == 'success') {
         $('#message').html('Login was successful.');
+
       }
       else if(code == 'error') {
         $('#message').html('An error occurred, please try again.');
       }
       $('#message').slideDown('fast');
     });
+    $.post('php/session.php', $('#mainform').serialize() 
+        +'&action='+ 'Login', function(sessionTmp) {
+				session = JSON.parse(sessionTmp);	
+		});
+
     return e.preventDefault();
   });
 });

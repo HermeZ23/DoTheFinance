@@ -2,6 +2,7 @@
 
 require_once("definitions.php");
 
+
 if((isset($_POST['username'], $_POST['password']))) {
   extract($_POST);
 
@@ -16,7 +17,7 @@ if((isset($_POST['username'], $_POST['password']))) {
 	  if(ord($result[5]) == 0 )  
 			die("<error id='1' />");		
 		session_start();
-    $_SESSION['username'] = $username;
+    $_SESSION['name'] = $username;
 		$_SESSION['email'] = $result[2];
 		$_SESSION['admin'] = ord($result[3]);
 		$_SESSION['accountant'] = ord($result[4]);
