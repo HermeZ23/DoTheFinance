@@ -15,7 +15,7 @@ $(document).ready(function() {
       $('#message').addClass(code);
       if(code == 'success') {
         $('#message').html('Login was successful.');
-
+				buildHome();	
       }
       else if(code == 'error') {
         $('#message').html('An error occurred, please try again.');
@@ -29,4 +29,6 @@ $(document).ready(function() {
 
     return e.preventDefault();
   });
+
+
 });

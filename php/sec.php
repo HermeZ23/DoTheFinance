@@ -19,8 +19,8 @@ if((isset($_POST['username'], $_POST['password']))) {
 		session_start();
     $_SESSION['name'] = $username;
 		$_SESSION['email'] = $result[2];
-		$_SESSION['admin'] = ord($result[3]);
-		$_SESSION['accountant'] = ord($result[4]);
+		$_SESSION['admin'] = $result[3];
+		$_SESSION['accountant'] = $result[4];
     die("<success />");
   }else 
 		die("<error id='2' />");
