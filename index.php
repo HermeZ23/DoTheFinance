@@ -13,8 +13,8 @@ session_start();
 		<link href="css/style.css" type="text/css" rel="stylesheet" /> 
 
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
-		<script src="js/login.js" type="text/javascript"></script>
 		<script src="js/loadHome.js" type="text/javascript"></script>
+		<script src="js/login.js" type="text/javascript"></script>
 
 	</head>
 	
