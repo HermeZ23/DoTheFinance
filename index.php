@@ -27,7 +27,7 @@ session_start();
 			</div>
 			<div id="message"><form id="mainform">
 	login:<input name="username" type="text" size="15" maxlength="30">
-	passw:<input name="password" type="text" size="15" maxlength="30">
+	passw:<input name="password" type="password" size="15" maxlength="30">
 	<input type="button" id="login" name="login" value="login"> </form> </div>
 
 			<div id="expenses">  </div>

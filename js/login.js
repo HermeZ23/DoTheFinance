@@ -22,6 +22,10 @@ $(document).ready(function() {
 		    $('#message').addClass(code);
 		    if(code == 'success') {
 		      $('#message').html('Login was successful.');
+					$('#message').append('<input type="button" id="logout" value="logout">');
+					$('#logout').click(function(e) {
+						logout();
+					});
 					buildHome();	
 		    }
 		    else if(code == 'error') {
@@ -38,6 +42,10 @@ $(document).ready(function() {
 		});
 	}else{//if already logged in
 		$('#message').html('Logged in as '+session['name']);
+		$('#message').append('<input type="button" id="logout" value="logout">');
+		$('#logout').click(function(e) {
+			logout();
+		});
 		buildHome();	
 	}
 

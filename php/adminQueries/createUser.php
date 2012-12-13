@@ -4,8 +4,7 @@
 
 require_once("../definitions.php");
 
-function saltPw($password, $salt)
-{
+function saltPw($password, $salt){
      return hash('sha256', $password . $salt);
 }
 
@@ -17,12 +16,12 @@ $saltedHash = saltPw($password, $salt);
 
 $name = $_POST['user'];
 $email = $_POST['email'];
-if($_POST['admin'] == "active"){
+if($_POST['admin'] == "admin"){
 	$isAdmin = 1;
 }else{
 	$isAdmin = 0;
 }
-if($_POST['accountant'] == "active"){
+if($_POST['accountant'] == "accountant"){
 	$isAccountant = 1;
 }else{
 	$isAccountant = 0;

@@ -2,6 +2,9 @@
 
 require_once("definitions.php");
 
+function saltPw($password, $salt){
+     return hash('sha256', $password . $salt);
+}
 
 if((isset($_POST['username'], $_POST['password']))) {
   extract($_POST);
@@ -9,11 +12,16 @@ if((isset($_POST['username'], $_POST['password']))) {
   $db = mysql_connect (DBPATH,DBUSER, DBPASS);
   mysql_select_db(DB, $db);
 
-  $query = mysql_query("select count(id) from ".DBPREFIX."user where name='".$username."' and email='".$password."'");
+	$query = mysql_query("select * from ".DBPREFIX."user where name='".$username."'");
   $result = mysql_fetch_row($query);
-  if($result[0] == 1) {
-		$query = mysql_query("select * from ".DBPREFIX."user where name='".$username."'");
-  	$result = mysql_fetch_row($query);
+
+  $query = mysql_query("select * from ".DBPREFIX."pass where userName='".$username."'");
+  $approved = mysql_fetch_row($query);
+  
+	$pw = saltPw($password, $approved[2]);
+
+	if($pw == $approved[1]) {
+
 	  if(ord($result[5]) == 0 )  
 			die("<error id='1' />");		
 		session_start();
