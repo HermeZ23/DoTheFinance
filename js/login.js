@@ -1,6 +1,7 @@
 
 var session = new Array();
 
+
 //get PHP Session Variable
 $.post('php/session.php', $('#mainform').serialize() 
         +'&action='+ 'Login', function(sessionTmp) {

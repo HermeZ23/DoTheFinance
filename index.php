@@ -26,12 +26,14 @@ session_start();
 				<h1>Do the finance</h1>
 			</div>
 			<div id="message"><form id="mainform">
-	login:<input name="username" type="text" size="15" maxlength="30">
-	passw:<input name="password" type="password" size="15" maxlength="30">
-	<input type="button" id="login" name="login" value="login"> </form> </div>
+					login:<input name="username" type="text" size="15" maxlength="30">
+					passw:<input name="password" type="password" size="15" maxlength="30">
+				<input type="button" id="login" name="login" value="login"> </form> </div>
 
 			<div id="expenses">  </div>
 			<div id="account">  </div>
+			<div id="expenses1">  </div>
+			<div id="account1">  </div>
 
 		</div>
 

@@ -9,6 +9,7 @@ function buildHome(){
 	
 	if(session['admin']){
 		formCreateUser();
+		listUser();
 	}
 	if(session['accountant']){
 
@@ -32,3 +33,23 @@ function formCreateUser(){
 	});
 
 }
+
+function listUser(){
+	var users = [];
+	$.post('php/adminQueries/getUser.php', "?ds=d" , function(data) {
+			users = jQuery.parseJSON(data);
+			
+			var text = '<table border="0" id="users"> <tr> <th>Name</th> <th>Active</th> <th>Admin</th> <th>Accountant</th> ';		
+			$.each(users , function(index, user){
+				text += '<tr> <td>'+user['name']+'</td> <td><center>'+user['isActive']+'</center></td> <td><center>'+user['isAdmin']+'</center></td> <td><center>'+user['isAccountant']+'</center></td></tr>';	
+			});
+
+			text += '</table>';	
+			$('#account').html(text);
+			
+	});
+
+}
+
+
+

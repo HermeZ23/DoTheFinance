@@ -43,6 +43,22 @@ body {
   position: absolute;
   background-color: lightgrey; }
 
+#expenses1 {
+  width: 900px;
+  height: 200px;
+  top: 352px;
+  left: 0px;
+  position: absolute;
+  background-color: purple; }
+
+#account1 {
+  width: 290px;
+  height: 200px;
+  top: 352px;
+  left: 910px;
+  position: absolute;
+  background-color: lightgrey; }
+
 #footer {
   width: 1200px;
   height: 60px;

@@ -35,13 +35,8 @@ if($_POST['active'] == "active"){
 $db = mysql_connect (DBPATH,DBUSER, DBPASS);
 mysql_select_db(DB, $db);
 
-
-
-
 $query = mysql_query("INSERT INTO ".DBPREFIX."pass (userName,pass,salt) VALUES ('".$name."', '".$saltedHash."',".$salt.")");
 $result = mysql_fetch_row($query);
-
-
 
 $query = mysql_query("INSERT INTO ".DBPREFIX."user (name,email,isAdmin,isAccountant,isActive) VALUES ('".$name."','".$email."',".$isAdmin.",".$isAccountant.",".$isActive.")");
 $result = mysql_fetch_row($query);
