@@ -3,9 +3,27 @@ body {
 
 #main {
   width: 1200px;
-  height: 1200px;
+  height: 160px;
   position: relative;
   margin: 0 auto 0 auto; }
+
+#data {
+  width: 1200px;
+  height: 1600px;
+  position: relative;
+  margin: 0 auto 0 auto; }
+
+#dataBig {
+  width: 900px;
+  height: 1200px;
+  position: absolute;
+  left: 0px; }
+
+#dataSmall {
+  width: 290px;
+  height: 1200px;
+  position: absolute;
+  left: 900px; }
 
 #head {
   width: 900px;
@@ -27,12 +45,30 @@ body {
   position: absolute;
   background-color: purple; }
 
+.small {
+  width: 290px;
+  height: 200px;
+  left: 910px;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: auto;
+  float: left;
+  background-color: purple; }
+
+.big {
+  width: 900px;
+  height: 200px;
+  margin-top: 10px;
+  position: auto;
+  float: left;
+  background-color: purple; }
+
 #expenses {
   width: 900px;
   height: 200px;
   top: 150px;
   left: 0px;
-  position: absolute;
+  position: auto;
   background-color: purple; }
 
 #account {
@@ -40,7 +76,7 @@ body {
   height: 200px;
   top: 150px;
   left: 910px;
-  position: absolute;
+  position: auto;
   background-color: lightgrey; }
 
 #expenses1 {
@@ -48,7 +84,7 @@ body {
   height: 200px;
   top: 352px;
   left: 0px;
-  position: absolute;
+  position: auto;
   background-color: purple; }
 
 #account1 {
@@ -56,7 +92,7 @@ body {
   height: 200px;
   top: 352px;
   left: 910px;
-  position: absolute;
+  position: auto;
   background-color: lightgrey; }
 
 #footer {

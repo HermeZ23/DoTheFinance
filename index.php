@@ -28,15 +28,15 @@ session_start();
 			<div id="message"><form id="mainform">
 					login:<input name="username" type="text" size="15" maxlength="30">
 					passw:<input name="password" type="password" size="15" maxlength="30">
-				<input type="button" id="login" name="login" value="login"> </form> </div>
+				<input type="button" id="login" name="login" value="login"> </form>
+			</div>
 
-			<div id="expenses">  </div>
-			<div id="account">  </div>
-			<div id="expenses1">  </div>
-			<div id="account1">  </div>
-
-		</div>
-
+	</div>
+	<div id="data"> 
+		<div id="dataBig"></div> 
+		<div id="dataSmall"></div>
+	</div>
+	
 	</body>
 
 </html>
