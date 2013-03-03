@@ -2,14 +2,14 @@
 var session = new Array();
 
 
-//get PHP Session Variable
-$.post('php/session.php', $('#mainform').serialize() 
-        +'&action='+ 'Login', function(sessionTmp) {
-				session = JSON.parse(sessionTmp);	
-		});	
-
-
 $(document).ready(function() {
+
+	//get PHP Session Variable
+	$.post('php/session.php', $('#mainform').serialize() 
+        +'&action='+ 'Login', function(sessionTmp) {
+			session = JSON.parse(sessionTmp);	
+	});	
+
 	if(typeof session['name'] == 'undefined' ){//check if already logged in
 		$("#register, #login").click(function(e) {
 		  $('#message').slideUp('fast');

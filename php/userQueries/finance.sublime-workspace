@@ -3,6 +3,14 @@
 	{
 		"selected_items":
 		[
+			[
+				"data",
+				"dataSmall"
+			],
+			[
+				"fun",
+				"function"
+			]
 		]
 	},
 	"buffers":
@@ -11,18 +19,63 @@
 			"file": "/home/pavel/finance/DoTheFinance/js/loadHome.js",
 			"settings":
 			{
-				"buffer_size": 3819,
+				"buffer_size": 5077,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php \n\nrequire_once(\"definitions.php\");\n\n$db = mysql_connect (DBPATH,DBUSER, DBPASS);\nmysql_select_db(DB, $db);\n\n$_POST['name'] = \"test\";\n\n$query = mysql_query(\"INSERT INTO \".DBPREFIX.\"categories (name) VALUES ('\".$_POST['name'].\"')\");\n$result = mysql_fetch_row($query);\nmysql_close($db);\n\n\n?>\n",
-			"file": "/home/pavel/finance/DoTheFinance/php/db.php",
-			"file_size": 301,
-			"file_write_time": 1361047753000000,
+			"file": "/home/pavel/finance/DoTheFinance/index.php",
 			"settings":
 			{
-				"buffer_size": 295,
+				"buffer_size": 1025,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pavel/finance/DoTheFinance/php/accountantQueries/createExpense.php",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pavel/finance/DoTheFinance/php/accountantQueries/setLease.php",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pavel/finance/DoTheFinance/php/adminQueries/createUser.php",
+			"settings":
+			{
+				"buffer_size": 1012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pavel/finance/DoTheFinance/php/adminQueries/getUser.php",
+			"settings":
+			{
+				"buffer_size": 390,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pavel/finance/DoTheFinance/php/session.php",
+			"settings":
+			{
+				"buffer_size": 211,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pavel/finance/DoTheFinance/js/login.js",
+			"settings":
+			{
+				"buffer_size": 1517,
 				"line_ending": "Unix"
 			}
 		}
@@ -99,8 +152,9 @@
 	},
 	"file_history":
 	[
-		"/home/pavel/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/pavel/finance/DoTheFinance/php/db.php"
+		"/home/pavel/finance/DoTheFinance/css/style.scss",
+		"/home/pavel/finance/DoTheFinance/php/db.php",
+		"/home/pavel/.config/sublime-text-2/Packages/User/Preferences.sublime-settings"
 	],
 	"find":
 	{
@@ -135,7 +189,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -143,15 +197,15 @@
 					"file": "/home/pavel/finance/DoTheFinance/js/loadHome.js",
 					"settings":
 					{
-						"buffer_size": 3819,
+						"buffer_size": 5077,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3242,
-								3242
+								4563,
+								4563
 							]
 						],
 						"settings":
@@ -167,23 +221,182 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/home/pavel/finance/DoTheFinance/php/db.php",
+					"file": "/home/pavel/finance/DoTheFinance/index.php",
 					"settings":
 					{
-						"buffer_size": 295,
+						"buffer_size": 1025,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								290,
-								290
+								957,
+								957
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/pavel/finance/DoTheFinance/php/accountantQueries/createExpense.php",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/pavel/finance/DoTheFinance/php/accountantQueries/setLease.php",
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/pavel/finance/DoTheFinance/php/adminQueries/createUser.php",
+					"settings":
+					{
+						"buffer_size": 1012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1009,
+								1009
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/pavel/finance/DoTheFinance/php/adminQueries/getUser.php",
+					"settings":
+					{
+						"buffer_size": 390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								68,
+								68
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/pavel/finance/DoTheFinance/php/session.php",
+					"settings":
+					{
+						"buffer_size": 211,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26,
+								26
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/pavel/finance/DoTheFinance/js/login.js",
+					"settings":
+					{
+						"buffer_size": 1517,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -266,6 +479,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 234.0,
 	"status_bar_visible": true
 }
