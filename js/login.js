@@ -5,9 +5,18 @@ var session = new Array();
 $(document).ready(function() {
 
 	//get PHP Session Variable
-	$.post('php/session.php', $('#mainform').serialize() 
-        +'&action='+ 'Login', function(sessionTmp) {
-			session = JSON.parse(sessionTmp);	
+	//$.post('php/session.php', $('#mainform').serialize() 
+    //    +'&action='+ 'Login', function(sessionTmp) {
+	//		session = JSON.parse(sessionTmp);	
+	//});
+
+	$.ajax({
+  		type: 'POST',
+  		url: 'php/session.php',
+		data: $('#mainform').serialize()+'&action='+ 'Login',
+		async:false
+	}).done(function(sessionTmp) {
+		session = JSON.parse(sessionTmp);
 	});	
 
 	if(typeof session['name'] == 'undefined' ){//check if already logged in
