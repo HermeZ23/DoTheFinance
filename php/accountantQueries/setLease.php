@@ -6,15 +6,15 @@ require_once("../definitions.php");
 
 session_start();
 
-if($_SESSION['admin'] == "1"){
+if($_SESSION['accountant'] == "1"){
 
-	$name = $_POST['user'];
-	$email = $_POST['lease'];
+	$userID = $_POST['userID'];
+	$lease = $_POST['lease'];
 
 	$db = mysql_connect (DBPATH,DBUSER, DBPASS);
 	mysql_select_db(DB, $db);
 
-	$query = mysql_query("INSERT INTO ".DBPREFIX."user (name,email,isAdmin,isAccountant,isActive) VALUES ('".$name."','".$email."',".$isAdmin.",".$isAccountant.",".$isActive.")");
+	$query = mysql_query("INSERT INTO ".DBPREFIX."lease (userID,lease) VALUES (".$userID.",".$lease.")");
 	$result = mysql_fetch_row($query);
 
 	mysql_close($db);

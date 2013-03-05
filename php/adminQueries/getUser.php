@@ -6,7 +6,7 @@ require_once("../definitions.php");
 
 session_start();
 
-if($_SESSION['admin'] == "1"){
+if($_SESSION['admin'] == "1" || $_SESSION['accountant'] == "1"){
 	
 	$db = mysql_connect (DBPATH,DBUSER, DBPASS);
 	mysql_select_db(DB, $db);

@@ -9,13 +9,14 @@ function logout(){
 
 function buildHome(){
 	
-	if(session['admin']){
+	if(session['admin']==1){
 		formCreateUser();
 		listUser();
 		formCreateCategory();
 		listCategories();
+		alert("dd");
 	}
-	if(session['accountant']){
+	if(session['accountant']==1){
 		formSetLease();
 	}
 	
@@ -26,7 +27,7 @@ function buildHome(){
 
 function formCreateUser(){
 		
-	$('#data').prepend('<div class="big">Benutzer anlegen<form id="createUser">Username: <input type="text" id="nameCreateUser" name="user"></input><br>Email: <input type="text" id="emailCreateUser" name="email"><br>Password: <input type="password" id="passwordCreateUser" name="pwd"><br>Retype: <input type="password" id="retypeCreateUser" name="retype"><br>Admin: <input type="checkbox" id="adminCreateUser" name="admin" value="admin">Admin Permissions<br>Accountant: <input type="checkbox" id="accountantCreateUser" name="accountant" value="accountant">Accountant Permissions<br>Active: <input type="checkbox" id="activeCreateUser" name="active" value="active">User is active<br><input type="button" id="submitCreateUser" value="Submit"></form></div>');
+	$('#data').prepend('<div class="big">Benutzer anlegen<form id="createUser">Username: <input type="text" id="nameCreateUser" name="user"></input><br>Email: <input type="text" id="emailCreateUser" name="email"><br>Password: <input type="password" id="passwordCreateUser" name="pwd"><br>Retype: <input type="password" id="retypeCreateUser" name="retype"><br>	Admin: <input type="checkbox" id="adminCreateUser" name="admin" value="admin">Admin Permissions<br>Accountant: <input type="checkbox" id="accountantCreateUser" name="accountant" value="accountant">Accountant Permissions<br>Active: <input type="checkbox" id="activeCreateUser" name="active" value="active">User is active<br>	<input type="button" id="submitCreateUser" value="Submit"></form></div>');
 
 	$("#submitCreateUser").click(function(e) {
 		if($('#passwordCreateUser').val() != $('#retypeCreateUser').val()){
@@ -62,12 +63,12 @@ function listUser(){
 function formCreateCategory(){
 	$('#data').prepend('<div class="big">Kategorie erstellen <form id="createCategory">Name: <input type="text" id="nameCreateCategory" name="name"></input><br><input type="button" id="submitCreateCategory" value="Submit"></form></div>');
 	$("#submitCreateCategory").click(function(e) {
-			postData = $('#createCategory').serialize();
-			$.post('php/adminQueries/createCategory.php', postData , function(data) {
-				$('#createCategory')[0].reset();
-				listCategories();
-			});
+		postData = $('#createCategory').serialize();
+		$.post('php/adminQueries/createCategory.php', postData , function(data) {
+			$('#createCategory')[0].reset();
+			listCategories();
 		});
+	});
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -92,15 +93,24 @@ function listCategories(){
 function formSetLease(){
 	var users = [];
 	$.post('php/adminQueries/getUser.php', "?ds=d" , function(data) {
-			users = jQuery.parseJSON(data);
-			var text = '<div class="big">Miete festlegen <form id="setLease"><select name="user" size="3">';
+		users = jQuery.parseJSON(data);
+		var text = '<div class="small">Miete festlegen <form id="setLease"><select id="userSetLease" name="userID" size="3">';
 
-			$.each(users , function(index, user){
-				text += '<option value="'+user['ID']+'">'+user['name']+'</option>';
-			});
+		$.each(users , function(index, user){
+			text += '<option value="'+user['ID']+'">'+user['name']+'</option>';
+		});
 
-			text += '</select> <input type="button" id="submitSetLease" value="Submit"></form> </div>';	
-			$('#dataBig').prepend(text);
+		text += '</select><input type="text" id="leaseSetLease" name="lease"></input><br>'; 
+		text += '<input type="button" id="submitSetLease" value="Submit"></form> </div>';	
+		$('#dataSmall').prepend(text);
+
+		$("#submitSetLease").click(function(e) {
+		postData = $('#setLease').serialize();
+		$.post('php/accountantQueries/setLease.php', postData , function(data) {
+			$('#setLease')[1].reset();
+			listCategories();
+		});
+	});
 	});
 }
 
