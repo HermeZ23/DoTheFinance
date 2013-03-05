@@ -8,7 +8,7 @@ function logout(){
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function buildHome(){
-	
+	buildOverview();
 	if(session['admin']==1){
 		formCreateUser();
 		listUser();
@@ -20,6 +20,12 @@ function buildHome(){
 		formSetLease();
 	}
 	
+}
+
+function buildOverview(){
+	$('#data').prepend('<div class="big"></div>');
+
+	$('#dataSmall').prepend('<div class="small"></div>');
 }
 
 //###################################################### ADMIN ##################################################################################
@@ -116,8 +122,4 @@ function formSetLease(){
 
 //###################################################### USER ##################################################################################
 
-function addBoxes(){
-	$('#data').prepend('<div class="big"> sdfsdfdsfsd </div>');
-	$('#dataSmall').prepend('<div class="small">dsfsdf </div>');
-}
 
