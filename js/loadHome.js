@@ -9,6 +9,8 @@ function logout(){
 
 function buildHome(){
 	buildOverview();
+	
+
 	if(session['admin']==1){
 		formCreateUser();
 		listUser();
@@ -18,6 +20,7 @@ function buildHome(){
 	}
 	if(session['accountant']==1){
 		formSetLease();
+		formCreateCategory();
 	}
 	
 }
@@ -120,6 +123,18 @@ function formSetLease(){
 	});
 }
 
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function formCreateCategory(){
+	$('#dataSmall').prepend('<div class="small">Kontostand aktualisieren <form id="updateAmount">Kontostand: <input type="text" id="amountUpdateAmount" name="amount"></input><br><input type="button" id="submitUpdateAmount" value="Submit"></form></div>');
+	$("#submitUpdateAmount").click(function(e) {
+		postData = $('#updateAmount').serialize();
+		$.post('php/accountantQueries/updateAmount.php', postData , function(data) {
+			$('#updateAmount')[0].reset();
+		});
+	});
+}
 //###################################################### USER ##################################################################################
 
 
