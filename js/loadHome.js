@@ -8,8 +8,8 @@ function logout(){
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function buildHome(){
-	buildOverview();
-	
+	buildAmount();
+	buildInfo();
 
 	if(session['admin']==1){
 		formCreateUser();
@@ -20,15 +20,26 @@ function buildHome(){
 	}
 	if(session['accountant']==1){
 		formSetLease();
-		formCreateCategory();
+		formUpdateAmount();
 	}
 	
 }
 
-function buildOverview(){
-	$('#data').prepend('<div class="big"></div>');
+function buildAmount(){
+	var amount = 0;
+	$.post('php/userQueries/getAmount.php', "?ds=d" , function(data) {
+			amounts = jQuery.parseJSON(data);
+			$.each(amounts , function(index, sum){
+				amount = sum['amount'];
+			});	
+			$('#balance').html('Kontostand: '+amount +"€");
+	});
+}
 
-	$('#dataSmall').prepend('<div class="small"></div>');
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function buildInfo(){
+	$('#info').html('info');
 }
 
 //###################################################### ADMIN ##################################################################################
@@ -126,14 +137,17 @@ function formSetLease(){
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function formCreateCategory(){
+function formUpdateAmount(){
 	$('#dataSmall').prepend('<div class="small">Kontostand aktualisieren <form id="updateAmount">Kontostand: <input type="text" id="amountUpdateAmount" name="amount"></input><br><input type="button" id="submitUpdateAmount" value="Submit"></form></div>');
 	$("#submitUpdateAmount").click(function(e) {
 		postData = $('#updateAmount').serialize();
 		$.post('php/accountantQueries/updateAmount.php', postData , function(data) {
 			$('#updateAmount')[0].reset();
+			buildAmount();
 		});
 	});
+
+
 }
 //###################################################### USER ##################################################################################
 

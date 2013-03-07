@@ -13,6 +13,13 @@ body {
   position: relative;
   margin: 0 auto 0 auto; }
 
+#overview {
+  width: 1200px;
+  height: 120px;
+  position: relative;
+  margin: 0 auto 0 auto;
+  background-color: orange; }
+
 #dataBig {
   width: 900px;
   height: 1200px;
@@ -45,6 +52,18 @@ body {
   position: absolute;
   background-color: purple; }
 
+#balance {
+  width: 290px;
+  height: 120px;
+  left: 910px;
+  position: absolute; }
+
+#info {
+  width: 900px;
+  height: 120px;
+  left: 0px;
+  position: absolute; }
+
 .small {
   width: 290px;
   height: 200px;
@@ -62,38 +81,6 @@ body {
   position: auto;
   float: left;
   background-color: purple; }
-
-#expenses {
-  width: 900px;
-  height: 200px;
-  top: 150px;
-  left: 0px;
-  position: auto;
-  background-color: purple; }
-
-#account {
-  width: 290px;
-  height: 200px;
-  top: 150px;
-  left: 910px;
-  position: auto;
-  background-color: lightgrey; }
-
-#expenses1 {
-  width: 900px;
-  height: 200px;
-  top: 352px;
-  left: 0px;
-  position: auto;
-  background-color: purple; }
-
-#account1 {
-  width: 290px;
-  height: 200px;
-  top: 352px;
-  left: 910px;
-  position: auto;
-  background-color: lightgrey; }
 
 #footer {
   width: 1200px;

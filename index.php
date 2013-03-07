@@ -32,6 +32,8 @@ session_start();
 			</div>
 
 	</div>
+	
+	<div id="overview"><div id="info"></div> <div id="balance"></div> </div> 
 	<div id="data"> 
 		<div id="dataBig"></div> 
 		<div id="dataSmall"></div>
