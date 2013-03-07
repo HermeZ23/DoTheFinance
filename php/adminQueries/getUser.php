@@ -11,7 +11,7 @@ if($_SESSION['admin'] == "1" || $_SESSION['accountant'] == "1"){
 	$db = mysql_connect (DBPATH,DBUSER, DBPASS);
 	mysql_select_db(DB, $db);
 
-	$query = mysql_query("SELECT * FROM ".DBPREFIX."user ");
+	$query = mysql_query("SELECT * FROM ".DBPREFIX."user  WHERE isActive=1;" );
 
 	$rows = array();
 	while($r = mysql_fetch_assoc($query)) {

@@ -20,6 +20,7 @@ function buildHome(){
 	}
 	if(session['accountant']==1){
 		formSetLease();
+		listLeases();
 		formUpdateAmount();
 	}
 	
@@ -148,6 +149,19 @@ function formUpdateAmount(){
 	});
 
 
+}
+
+function listLeases(){
+	var users = [];
+	$.post('php/accountantQueries/getLeases.php', "?ds=d" , function(data) {
+			users = jQuery.parseJSON(data);
+			var text = '<div class="big"><table border="0" id="users"> <tr> <th>Name</th> <th>Miete</th> ';		
+			$.each(users , function(index, user){
+				text += '<tr> <td>'+user['name']+'</td> <td><center>'+user['lease']+'</center></td> </tr>';	
+			});
+			text += '</table></div>';	
+			$('#data').prepend(text);
+	});
 }
 //###################################################### USER ##################################################################################
 
